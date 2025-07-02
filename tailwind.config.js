@@ -10,7 +10,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary color palette
+        // Primary color palette - using direct class names
+        'primary-white': '#FFFFFF',
+        'primary-black': '#000000',
+        'primary-gold': '#FFD700',
+        'primary-gold-muted': '#D4AF37',
+        'primary-gold-dark': '#B8860B',
+        // Keep the nested structure for compatibility
         primary: {
           white: '#FFFFFF',
           black: '#000000',

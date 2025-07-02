@@ -45,20 +45,11 @@ export const metadata: Metadata = {
     title: 'Your Name - Digital Portfolio & Personal Hub',
     description: 'A sophisticated digital portfolio showcasing projects, expertise, and professional journey.',
     siteName: 'Your Name Portfolio',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Your Name - Digital Portfolio',
-      },
-    ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Your Name - Digital Portfolio & Personal Hub',
     description: 'A sophisticated digital portfolio showcasing projects, expertise, and professional journey.',
-    images: ['/og-image.jpg'],
     creator: '@yourhandle',
   },
   robots: {
@@ -85,9 +76,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
