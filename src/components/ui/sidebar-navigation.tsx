@@ -76,6 +76,72 @@ const projectCategories = [
       },
     ],
   },
+  {
+    id: 'developer-tools',
+    title: 'Developer Tools Suite',
+    projects: [
+      {
+        id: 'audio-recorder',
+        title: 'Audio Recorder',
+        description: 'Record high-quality audio with real-time visualization',
+        url: '/tools/audio-recorder',
+        type: 'web-app',
+        tags: ['Audio', 'Recording', 'WebRTC'],
+        language: 'TypeScript',
+        stars: 5,
+      },
+      {
+        id: 'image-gallery',
+        title: 'Image Gallery',
+        description: 'Create and manage beautiful image galleries',
+        url: '/tools/image-gallery',
+        type: 'web-app',
+        tags: ['Images', 'Gallery', 'Upload'],
+        language: 'TypeScript',
+        stars: 4,
+      },
+      {
+        id: 'media-downloader',
+        title: 'Media Downloader',
+        description: 'Download media from YouTube, Twitter, and more',
+        url: '/tools/media-downloader',
+        type: 'web-app',
+        tags: ['Download', 'YouTube', 'Social Media'],
+        language: 'TypeScript',
+        stars: 5,
+      },
+      {
+        id: 'text-to-audio',
+        title: 'Text to Audio',
+        description: 'AI-powered text-to-speech conversion',
+        url: '/tools/text-to-audio',
+        type: 'web-app',
+        tags: ['AI', 'TTS', 'Gemini'],
+        language: 'TypeScript',
+        stars: 5,
+      },
+      {
+        id: 'video-player',
+        title: 'Video Player',
+        description: 'Advanced video player with subtitle support',
+        url: '/tools/video-player',
+        type: 'web-app',
+        tags: ['Video', 'Player', 'Subtitles'],
+        language: 'TypeScript',
+        stars: 4,
+      },
+      {
+        id: 'voice-transcriber',
+        title: 'Voice Transcriber',
+        description: 'AI-powered voice-to-text transcription',
+        url: '/tools/voice-transcriber',
+        type: 'web-app',
+        tags: ['AI', 'Transcription', 'Speech'],
+        language: 'TypeScript',
+        stars: 5,
+      },
+    ],
+  },
 ];
 
 interface SidebarNavigationProps {
@@ -138,7 +204,13 @@ export function SidebarNavigation({ className }: SidebarNavigationProps) {
   }, [isOpen]);
 
   const handleProjectClick = (project: Project) => {
-    window.open(project.url, '_blank', 'noopener,noreferrer');
+    if (project.url.startsWith('/')) {
+      // Internal link - use Next.js navigation
+      window.location.href = project.url;
+    } else {
+      // External link - open in new tab
+      window.open(project.url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const getProjectIcon = (type: string) => {

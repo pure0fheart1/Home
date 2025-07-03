@@ -1,227 +1,195 @@
-# Personal Homepage - Digital Portfolio & Hub
+# Personal Homepage & Developer Tools Suite
 
-A sophisticated, modern personal homepage built with Next.js 14, featuring a premium design with white, black, and gold color scheme. This scalable platform serves as a digital identity and portfolio centerpiece, designed to grow with your career and projects.
+A sophisticated personal homepage featuring a comprehensive developer tools suite with AI-powered features using Google Gemini API.
 
-## ✨ Features
+## 🚀 Features
 
-### 🎨 Design & Aesthetics
-- **Premium Color Scheme**: Pure white (#FFFFFF), rich black (#000000), and elegant gold (#FFD700/#D4AF37)
-- **Modern Typography**: Inter for body text, Playfair Display for headings
-- **Sophisticated Animations**: Framer Motion powered micro-interactions and page transitions
-- **Dark Mode Support**: Elegant theme switching with automatic system preference detection
-- **Responsive Design**: Mobile-first approach with seamless desktop scaling
+### Homepage
+- Modern, responsive design with dark/light theme support
+- Smooth animations with Framer Motion
+- Project showcase and skills sections
+- Professional navigation with sidebar
 
-### 🏗️ Architecture & Scalability
-- **Next.js 14 App Router**: Modern React framework with optimal performance
-- **TypeScript**: Full type safety with strict configuration
-- **Modular Components**: Reusable design system for consistency
-- **Dynamic Routing**: Built for unlimited project pages and content expansion
-- **Performance Optimized**: Lazy loading, code splitting, and bundle optimization
+### Developer Tools Suite
+- **Audio Recorder**: Record high-quality audio with real-time visualization
+- **Image Gallery**: Upload, organize, and manage image collections
+- **Media Downloader**: Download content from YouTube, Twitter, Instagram, and more
+- **Text to Audio**: AI-powered text-to-speech conversion using Gemini API
+- **Video Player**: Advanced video player with subtitle support and speed controls
+- **Voice Transcriber**: AI-powered voice-to-text transcription using Web Speech API
 
-### 🔧 Technical Features
-- **Progressive Web App (PWA)**: Offline capabilities and app-like experience
-- **SEO Optimized**: Meta tags, structured data, and automatic sitemap generation
-- **Analytics Ready**: Vercel Analytics integration
-- **Command Palette**: Quick navigation with Cmd+K shortcut
-- **Hidden Project Sidebar**: ALT+S+D shortcut reveals comprehensive GitHub project navigator
-- **Intersection Observer**: Smooth scroll animations and active section tracking
-- **Accessible**: WCAG 2.1 AA compliance with keyboard navigation
+## 🛠️ Tech Stack
 
-### 🎯 Core Sections
-- **Hero Section**: Animated personal branding with typing effect
-- **Project Showcase**: Dynamic grid with filtering capabilities
-- **Skills Visualization**: Interactive expertise display
-- **Contact Section**: Professional contact form and social links
-- **Blog Integration**: Ready for content expansion
-- **Hidden Sidebar**: ALT+S+D activated project navigator with all GitHub repositories
+- **Framework**: Next.js 14 with TypeScript
+- **Styling**: Tailwind CSS with custom design system
+- **Animations**: Framer Motion
+- **AI Integration**: Google Gemini API
+- **File Handling**: React Dropzone
+- **Icons**: Lucide React
+- **Theme**: Next Themes
 
-## 🚀 Quick Start
+## 📋 Prerequisites
 
-1. **Clone and Install**
+- Node.js 18+ 
+- npm or yarn
+- Google Gemini API key (for AI features)
+
+## � Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd personal-homepage
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. **Start Development Server**
+3. **Set up environment variables**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   Edit `.env.local` and add your API keys:
+   ```env
+   # Required for AI features
+   GEMINI_API_KEY=your_gemini_api_key_here
+   
+   # Site configuration
+   SITE_URL=http://localhost:3000
+   NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   ```
+
+4. **Get your Gemini API key**
+   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create a new API key
+   - Copy it to your `.env.local` file
+
+5. **Run the development server**
    ```bash
    npm run dev
    ```
 
-3. **Open in Browser**
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎯 Usage
+
+### Homepage
+- Browse the main homepage to see your portfolio and projects
+- Use `ALT+S+D` to open the project navigator sidebar
+- Switch between light and dark themes
+
+### Developer Tools
+- Access tools via `/tools` or through the sidebar navigation
+- Each tool has its own dedicated page with full functionality
+- AI-powered tools (Text to Audio, Voice Transcriber) require the Gemini API key
+
+### Tool-Specific Features
+
+#### Audio Recorder (`/tools/audio-recorder`)
+- Click "Start Recording" to begin
+- Real-time audio level visualization
+- Pause/resume functionality
+- Download recordings as WebM files
+
+#### Image Gallery (`/tools/image-gallery`)
+- Drag & drop images or click to upload
+- Grid/list view modes
+- Bulk operations (download, delete)
+- Image preview modal
+
+#### Media Downloader (`/tools/media-downloader`)
+- Paste URLs from supported platforms
+- Choose format (MP4, MP3, WebM, WAV) and quality
+- Track download progress
+- *Note: This is a UI demonstration - backend integration required for actual downloads*
+
+#### Text to Audio (`/tools/text-to-audio`)
+- Enter text (up to 5000 characters)
+- Adjust voice settings (speed, pitch, volume)
+- AI enhancement features (placeholder)
+- Download generated audio
+
+#### Video Player (`/tools/video-player`)
+- Upload video files (MP4, WebM, MOV, AVI, MKV)
+- Full-featured player with subtitles
+- Playback speed control
+- Fullscreen support
+- Playlist management
+
+#### Voice Transcriber (`/tools/voice-transcriber`)
+- Real-time voice transcription
+- Multiple language support
+- Upload audio files for transcription
+- Download transcriptions as text files
+
+## 🔐 API Keys Setup
+
+### Google Gemini API
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy the generated key
+5. Add it to your `.env.local` file as `GEMINI_API_KEY`
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically
+
+### Other Platforms
+1. Build the project:
+   ```bash
+   npm run build
    ```
-   http://localhost:3000
-   ```
+2. Deploy the `out` directory to your hosting platform
+
+## 🎨 Customization
+
+### Styling
+- Modify `tailwind.config.js` for theme customization
+- Update CSS variables in `src/app/globals.css`
+- Edit component styles in individual files
+
+### Content
+- Update personal information in homepage components
+- Modify project data in sidebar navigation
+- Customize tool descriptions and features
+
+### AI Features
+- Extend Gemini API integration in `src/lib/gemini.ts`
+- Add new AI-powered tools by following existing patterns
+- Customize voice settings and language options
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/                    # Next.js 14 App Router
-│   ├── layout.tsx         # Root layout with theme provider
-│   ├── page.tsx           # Homepage
-│   └── globals.css        # Global styles and CSS variables
-├── components/
-│   ├── ui/                # Reusable UI components
-│   │   ├── button.tsx     # Premium button with variants
-│   │   ├── card.tsx       # Interactive card components
-│   │   └── ...
-│   ├── layout/            # Layout components
-│   │   ├── navigation.tsx # Sticky navigation with scroll effects
-│   │   └── footer.tsx     # Comprehensive footer
-│   ├── sections/          # Homepage sections
-│   │   ├── hero-section.tsx
-│   │   ├── project-showcase.tsx
-│   │   └── ...
-│   └── providers/         # Context providers
-├── lib/
-│   └── utils.ts          # Utility functions
-├── types/
-│   └── index.ts          # TypeScript definitions
-└── styles/               # Additional stylesheets
+├── app/                    # Next.js app router
+│   ├── tools/             # Tool pages
+│   │   ├── audio-recorder/
+│   │   ├── image-gallery/
+│   │   ├── media-downloader/
+│   │   ├── text-to-audio/
+│   │   ├── video-player/
+│   │   └── voice-transcriber/
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx          # Homepage
+├── components/            # Reusable components
+│   ├── layout/           # Layout components
+│   ├── sections/         # Homepage sections
+│   └── ui/              # UI components
+├── lib/                  # Utilities and APIs
+│   ├── gemini.ts        # Gemini API integration
+│   └── utils.ts         # Utility functions
+└── types/               # TypeScript type definitions
 ```
-
-## 🎨 Design System
-
-### Color Palette
-```css
-/* Light Theme */
---background: 0 0% 100%     /* Pure White */
---foreground: 0 0% 0%       /* Rich Black */
---accent: 45 93% 47%        /* Elegant Gold */
-
-/* Dark Theme */
---background: 0 0% 0%       /* Rich Black */
---foreground: 0 0% 100%     /* Pure White */
---accent: 45 93% 47%        /* Elegant Gold */
-```
-
-### Typography Scale
-- **Headings**: Playfair Display (serif)
-- **Body**: Inter (sans-serif)
-- **Code**: JetBrains Mono (monospace)
-
-### Component Variants
-- **Buttons**: Primary, Secondary, Outline, Ghost, Link, Gold
-- **Cards**: Default, Elevated, Outlined, Glass
-- **Interactive states**: Hover, focus, and active animations
-
-## 📜 Available Scripts
-
-```bash
-# Development
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-
-# Quality Assurance
-npm run lint         # ESLint code checking
-npm run type-check   # TypeScript type checking
-
-# Optimization
-npm run analyze      # Bundle size analysis
-npm run build-sitemap # Generate sitemap
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env.local` file:
-
-```env
-SITE_URL=https://.com
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourname.com
-```
-
-### Customization Guide
-
-1. **Personal Information**
-   - Update `src/components/sections/hero-section.tsx` with your details
-   - Modify social links in navigation and footer components
-
-2. **Projects Data**
-   - Add your projects to `src/components/sections/project-showcase.tsx`
-   - Consider moving to a CMS or API for dynamic content
-
-3. **Color Scheme**
-   - Modify CSS variables in `src/app/globals.css`
-   - Update Tailwind config in `tailwind.config.js`
-
-4. **Content**
-   - Replace placeholder text throughout components
-   - Add your own images to the `public/` directory
-
-5. **Hidden Sidebar Projects**
-   - Edit `src/components/ui/sidebar-navigation.tsx` to add your GitHub projects
-   - Follow the guide in `SIDEBAR_GUIDE.md` for detailed customization
-   - Test the ALT+S+D keyboard shortcut functionality
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-```bash
-npm i -g vercel
-vercel
-```
-
-### Manual Build
-```bash
-npm run build
-npm run start
-```
-
-### Environment Setup
-1. Set up custom domain
-2. Configure environment variables
-3. Set up analytics tracking
-4. Generate and upload icons/images
-
-## 📈 Performance
-
-### Built-in Optimizations
-- **Image Optimization**: WebP/AVIF support with Next.js Image
-- **Bundle Splitting**: Optimized webpack configuration
-- **Font Loading**: Optimized Google Fonts with display: swap
-- **CSS Optimization**: Critical CSS inlining and tree shaking
-- **Runtime Performance**: React 18 features and optimizations
-
-### Lighthouse Scores Target
-- **Performance**: 95+
-- **Accessibility**: 100
-- **Best Practices**: 100
-- **SEO**: 100
-
-## 🔒 Security
-
-- **CSP Headers**: Content Security Policy implementation
-- **XSS Protection**: Built-in React XSS prevention
-- **HTTPS Enforcement**: Secure headers configuration
-- **Dependency Scanning**: Regular security audits
-
-## 🎯 Roadmap
-
-### Phase 1 ✅
-- [x] Core design system
-- [x] Homepage sections
-- [x] Dark mode support
-- [x] Responsive design
-- [x] Basic animations
-- [x] Hidden sidebar navigation (ALT+S+D)
-
-### Phase 2 🚧
-- [ ] Command palette search
-- [ ] Blog functionality
-- [ ] Advanced project filtering
-- [ ] Contact form backend
-- [ ] Newsletter integration
-- [ ] GitHub API integration for dynamic sidebar projects
-
-### Phase 3 📋
-- [ ] CMS integration
-- [ ] Advanced analytics
-- [ ] A/B testing framework
-- [ ] Multiple language support
-- [ ] Advanced PWA features
 
 ## 🤝 Contributing
 
@@ -233,18 +201,24 @@ npm run start
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **Next.js Team** - Amazing React framework
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Smooth animations library
-- **Lucide React** - Beautiful icon library
-- **Vercel** - Deployment and hosting platform
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations
+- [Google Gemini](https://ai.google.dev/) for AI capabilities
+- [Lucide React](https://lucide.dev/) for beautiful icons
+
+## 📞 Support
+
+If you have any questions or need help setting up the project:
+
+1. Check the [Issues](https://github.com/your-username/your-repo/issues) page
+2. Create a new issue with detailed description
+3. Join the discussions in the [Discussions](https://github.com/your-username/your-repo/discussions) tab
 
 ---
 
-**Built with ❤️ and lots of ☕ using modern web technologies**
-
-For questions or support, feel free to [open an issue](https://github.com/yourusername/personal-homepage/issues) or reach out on social media.
+**Made with ❤️ and lots of ☕**
