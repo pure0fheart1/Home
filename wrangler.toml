@@ -1,0 +1,16 @@
+name = "personal-homepage"
+compatibility_date = "2023-12-07"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "personal-homepage"
+
+[env.preview]
+name = "personal-homepage-preview"
+
+# Configuration for Cloudflare Pages
+pages_build_output_dir = "out"
+
+# Optional: Environment variables
+# [vars]
+# NEXT_PUBLIC_SITE_URL = "https://your-domain.pages.dev" 

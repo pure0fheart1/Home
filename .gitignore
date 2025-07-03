@@ -63,4 +63,9 @@ Thumbs.db
 
 # Sitemap
 public/sitemap.xml
-public/robots.txt 
+public/robots.txt
+
+# Cloudflare
+.wrangler/
+wrangler.toml.bak
+.dev.vars 
