@@ -32,6 +32,46 @@ interface ProjectCategory {
 // }
 const projectCategories: ProjectCategory[] = [
   {
+    title: 'AI-Powered Tools',
+    projects: [
+      {
+        id: 'resume-analyzer',
+        title: 'AI Resume Analyzer',
+        description: 'Get AI-powered feedback on your resume with improvement suggestions',
+        url: '/tools/resume-analyzer',
+        type: 'project',
+      },
+      {
+        id: 'code-reviewer',
+        title: 'Smart Code Reviewer',
+        description: 'Intelligent code reviews with security analysis and performance tips',
+        url: '/tools/code-reviewer',
+        type: 'project',
+      },
+      {
+        id: 'content-generator',
+        title: 'AI Content Generator',
+        description: 'Create engaging content for blogs, social media, and projects',
+        url: '/tools/content-generator',
+        type: 'project',
+      },
+      {
+        id: 'color-palette',
+        title: 'Smart Color Palette Generator',
+        description: 'Generate mood-based color palettes with instant CSS export',
+        url: '/tools/color-palette',
+        type: 'project',
+      },
+      {
+        id: 'url-analytics',
+        title: 'URL Analytics Hub',
+        description: 'Create short links, generate QR codes, and track analytics',
+        url: '/tools/url-analytics',
+        type: 'project',
+      },
+    ],
+  },
+  {
     title: 'AI & Machine Learning Projects',
     projects: [
       {
@@ -187,8 +227,8 @@ export function SimpleSidebar() {
                     <a
                       key={project.id}
                       href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={project.url.startsWith('http') ? "_blank" : "_self"}
+                      rel={project.url.startsWith('http') ? "noopener noreferrer" : undefined}
                       className="block p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-all duration-200 border border-transparent hover:border-accent/20"
                     >
                       <div className="flex items-center gap-3">
