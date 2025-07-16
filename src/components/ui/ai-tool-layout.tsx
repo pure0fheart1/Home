@@ -168,4 +168,8 @@ export function AIToolLayout({
       </div>
     </div>
   );
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 7cb7b851c7a7d51d274323c6d995a24b4a3e5b11
