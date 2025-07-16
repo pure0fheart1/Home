@@ -1,250 +1,121 @@
-# Personal Homepage - Digital Portfolio & Hub
+# Home - Personal Digital Hub Monorepo
 
-A sophisticated, modern personal homepage built with Next.js 14, featuring a premium design with white, black, and gold color scheme. This scalable platform serves as a digital identity and portfolio centerpiece, designed to grow with your career and projects.
+This is a monorepo containing my personal homepage and AI tools platform, designed to be scalable to thousands of pages and tools as requested [[memory:916471]].
 
-## ✨ Features
+## 🏗️ Project Structure
 
-### 🎨 Design & Aesthetics
-- **Premium Color Scheme**: Pure white (#FFFFFF), rich black (#000000), and elegant gold (#FFD700/#D4AF37)
-- **Modern Typography**: Inter for body text, Playfair Display for headings
-- **Sophisticated Animations**: Framer Motion powered micro-interactions and page transitions
-- **Dark Mode Support**: Elegant theme switching with automatic system preference detection
-- **Responsive Design**: Mobile-first approach with seamless desktop scaling
-
-### 🏗️ Architecture & Scalability
-- **Next.js 14 App Router**: Modern React framework with optimal performance
-- **TypeScript**: Full type safety with strict configuration
-- **Modular Components**: Reusable design system for consistency
-- **Dynamic Routing**: Built for unlimited project pages and content expansion
-- **Performance Optimized**: Lazy loading, code splitting, and bundle optimization
-
-### 🔧 Technical Features
-- **Progressive Web App (PWA)**: Offline capabilities and app-like experience
-- **SEO Optimized**: Meta tags, structured data, and automatic sitemap generation
-- **Analytics Ready**: Vercel Analytics integration
-- **Command Palette**: Quick navigation with Cmd+K shortcut
-- **Hidden Project Sidebar**: ALT+S+D shortcut reveals comprehensive GitHub project navigator
-- **Intersection Observer**: Smooth scroll animations and active section tracking
-- **Accessible**: WCAG 2.1 AA compliance with keyboard navigation
-
-### 🎯 Core Sections
-- **Hero Section**: Animated personal branding with typing effect
-- **Project Showcase**: Dynamic grid with filtering capabilities
-- **Skills Visualization**: Interactive expertise display
-- **Contact Section**: Professional contact form and social links
-- **Blog Integration**: Ready for content expansion
-- **Hidden Sidebar**: ALT+S+D activated project navigator with all GitHub repositories
+```
+Home/
+├── apps/
+│   └── homepage/          # Main homepage application
+│       ├── src/          # Source code
+│       ├── public/       # Static assets
+│       └── package.json  # Homepage dependencies
+├── docs/                 # Documentation
+├── package.json         # Root monorepo configuration
+└── README.md           # This file
+```
 
 ## 🚀 Quick Start
 
-1. **Clone and Install**
-   ```bash
-   npm install
-   ```
+### Prerequisites
+- Node.js 18.0.0 or higher
+- npm 8.0.0 or higher
 
-2. **Start Development Server**
-   ```bash
-   npm run dev
-   ```
+### Installation & Running
 
-3. **Open in Browser**
-   ```
-   http://localhost:3000
-   ```
+From the root directory:
 
-## 📁 Project Structure
+```bash
+# Install dependencies
+npm run install:all
 
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
 ```
-src/
-├── app/                    # Next.js 14 App Router
-│   ├── layout.tsx         # Root layout with theme provider
-│   ├── page.tsx           # Homepage
-│   └── globals.css        # Global styles and CSS variables
-├── components/
-│   ├── ui/                # Reusable UI components
-│   │   ├── button.tsx     # Premium button with variants
-│   │   ├── card.tsx       # Interactive card components
-│   │   └── ...
-│   ├── layout/            # Layout components
-│   │   ├── navigation.tsx # Sticky navigation with scroll effects
-│   │   └── footer.tsx     # Comprehensive footer
-│   ├── sections/          # Homepage sections
-│   │   ├── hero-section.tsx
-│   │   ├── project-showcase.tsx
-│   │   └── ...
-│   └── providers/         # Context providers
-├── lib/
-│   └── utils.ts          # Utility functions
-├── types/
-│   └── index.ts          # TypeScript definitions
-└── styles/               # Additional stylesheets
+
+Or navigate to the specific app:
+
+```bash
+cd apps/homepage
+npm install
+npm run dev
 ```
 
 ## 🎨 Design System
 
-### Color Palette
-```css
-/* Light Theme */
---background: 0 0% 100%     /* Pure White */
---foreground: 0 0% 0%       /* Rich Black */
---accent: 45 93% 47%        /* Elegant Gold */
+The project uses a sophisticated **white, black, and gold** color scheme:
+- Primary: Gold (#FFD700)
+- Background: White/Black (theme-aware)
+- Accent: Gold variations
 
-/* Dark Theme */
---background: 0 0% 0%       /* Rich Black */
---foreground: 0 0% 100%     /* Pure White */
---accent: 45 93% 47%        /* Elegant Gold */
-```
+## 🔧 Features
 
-### Typography Scale
-- **Headings**: Playfair Display (serif)
-- **Body**: Inter (sans-serif)
-- **Code**: JetBrains Mono (monospace)
+- **100 AI Tools**: Comprehensive collection of AI-powered tools
+- **Hidden Sidebar**: Press `ALT+S+D` to reveal the tools navigation
+- **Dark Mode**: Automatic theme detection and manual toggle
+- **Responsive**: Optimized for all devices
+- **PWA Ready**: Installable as a progressive web app
+- **SEO Optimized**: Built-in sitemap and meta tags
 
-### Component Variants
-- **Buttons**: Primary, Secondary, Outline, Ghost, Link, Gold
-- **Cards**: Default, Elevated, Outlined, Glass
-- **Interactive states**: Hover, focus, and active animations
+## 📁 Apps
 
-## 📜 Available Scripts
+### Homepage (`/apps/homepage`)
+The main personal homepage and portfolio site featuring:
+- Hero section with animations
+- Project showcase
+- Skills visualization
+- AI tools integration
+- Contact section
 
-```bash
-# Development
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
+## 🛠️ Technology Stack
 
-# Quality Assurance
-npm run lint         # ESLint code checking
-npm run type-check   # TypeScript type checking
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS with custom design system
+- **Animations**: Framer Motion
+- **Type Safety**: TypeScript
+- **Database**: Firebase (ready for integration)
+- **Analytics**: Vercel Analytics
 
-# Optimization
-npm run analyze      # Bundle size analysis
-npm run build-sitemap # Generate sitemap
-```
+## 📚 Documentation
 
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env.local` file:
-
-```env
-SITE_URL=https://.com
-NEXT_PUBLIC_GA_ID=your-google-analytics-id
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourname.com
-```
-
-### Customization Guide
-
-1. **Personal Information**
-   - Update `src/components/sections/hero-section.tsx` with your details
-   - Modify social links in navigation and footer components
-
-2. **Projects Data**
-   - Add your projects to `src/components/sections/project-showcase.tsx`
-   - Consider moving to a CMS or API for dynamic content
-
-3. **Color Scheme**
-   - Modify CSS variables in `src/app/globals.css`
-   - Update Tailwind config in `tailwind.config.js`
-
-4. **Content**
-   - Replace placeholder text throughout components
-   - Add your own images to the `public/` directory
-
-5. **Hidden Sidebar Projects**
-   - Edit `src/components/ui/sidebar-navigation.tsx` to add your GitHub projects
-   - Follow the guide in `SIDEBAR_GUIDE.md` for detailed customization
-   - Test the ALT+S+D keyboard shortcut functionality
+- [AI Tools Implementation](./AI_TOOLS_IMPLEMENTATION_SUMMARY.md)
+- [Deployment Guide](./DEPLOYMENT_GUIDE.md)
+- [Sidebar Guide](./SIDEBAR_GUIDE.md)
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-```bash
-npm i -g vercel
-vercel
-```
+The project is optimized for deployment on Vercel:
 
-### Manual Build
 ```bash
+# From root directory
 npm run build
-npm run start
 ```
 
-### Environment Setup
-1. Set up custom domain
-2. Configure environment variables
-3. Set up analytics tracking
-4. Generate and upload icons/images
+Then deploy the `apps/homepage/.next` directory to your hosting provider.
 
-## 📈 Performance
+## 🔒 Environment Variables
 
-### Built-in Optimizations
-- **Image Optimization**: WebP/AVIF support with Next.js Image
-- **Bundle Splitting**: Optimized webpack configuration
-- **Font Loading**: Optimized Google Fonts with display: swap
-- **CSS Optimization**: Critical CSS inlining and tree shaking
-- **Runtime Performance**: React 18 features and optimizations
+Create `.env.local` in `apps/homepage/`:
 
-### Lighthouse Scores Target
-- **Performance**: 95+
-- **Accessibility**: 100
-- **Best Practices**: 100
-- **SEO**: 100
+```env
+# Google AI API
+GOOGLE_AI_API_KEY=AIzaSyDLqdavFp2JxGcDEyifFsXS5eGlfaOUf8A
 
-## 🔒 Security
-
-- **CSP Headers**: Content Security Policy implementation
-- **XSS Protection**: Built-in React XSS prevention
-- **HTTPS Enforcement**: Secure headers configuration
-- **Dependency Scanning**: Regular security audits
-
-## 🎯 Roadmap
-
-### Phase 1 ✅
-- [x] Core design system
-- [x] Homepage sections
-- [x] Dark mode support
-- [x] Responsive design
-- [x] Basic animations
-- [x] Hidden sidebar navigation (ALT+S+D)
-
-### Phase 2 🚧
-- [ ] Command palette search
-- [ ] Blog functionality
-- [ ] Advanced project filtering
-- [ ] Contact form backend
-- [ ] Newsletter integration
-- [ ] GitHub API integration for dynamic sidebar projects
-
-### Phase 3 📋
-- [ ] CMS integration
-- [ ] Advanced analytics
-- [ ] A/B testing framework
-- [ ] Multiple language support
-- [ ] Advanced PWA features
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- **Next.js Team** - Amazing React framework
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Smooth animations library
-- **Lucide React** - Beautiful icon library
-- **Vercel** - Deployment and hosting platform
+This is a personal project, but suggestions and feedback are welcome!
 
 ---
 
-**Built with ❤️ and lots of ☕ using modern web technologies**
-
-For questions or support, feel free to [open an issue](https://github.com/yourusername/personal-homepage/issues) or reach out on social media.
+Built with ❤️ using modern web technologies for scalability and performance. 

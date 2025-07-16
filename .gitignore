@@ -1,66 +1,74 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+Cc# Dependencies
+node_modules
+.pnp
 .pnp.js
 
-# testing
-/coverage
+# Testing
+coverage
+.nyc_output
 
-# next.js
-/.next/
-/out/
+# Next.js
+.next/
+out/
+build/
+dist/
 
-# production
-/build
+# Production
+*.production
 
-# misc
+# Misc
 .DS_Store
 *.pem
+Thumbs.db
 
-# debug
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# local env files
-.env*.local
+# Local env files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# MCP configuration files with secrets
-mcp-secrets.env
-docker-mcp-env.ps1
-create-docker-secrets.ps1
-
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
 # IDE
-.vscode/
-.idea/
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.sublime*
 *.swp
 *.swo
 
 # OS
-Thumbs.db
 .DS_Store
+Thumbs.db
 
-# Bundle analyzer
-.next/analyze/
+# Temporary files
+*.tmp
+*.temp
+.cache
 
-# PWA files
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
+# Logs
+logs
+*.log
 
-# Sitemap
-public/sitemap.xml
-public/robots.txt 
+# Build artifacts
+dist
+build
+.next
+out
+
+# Lock files (keep only one)
+package-lock.json
+yarn.lock
+!apps/*/package-lock.json 
